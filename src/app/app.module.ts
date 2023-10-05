@@ -8,12 +8,17 @@ import { AddMusicComponent } from './AddMusic/add-music/add-music.component';
 import { UserProfileComponent } from './UserProfile/user-profile/user-profile.component';
 import { PlaylistsComponent } from './Playlists/playlists/playlists.component';
 import { SearchBarComponent } from './SearchBar/search-bar/search-bar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { MusicCardComponent } from './HomePage/music-card/music-card.component';
 import { PopularArtistCardComponent } from './HomePage/popular-artist-card/popular-artist-card.component';
 import { MusicbarComponent } from './MusicPlayer/musicbar/musicbar.component';
 import { SidebarComponent } from './SideBar/sidebar/sidebar.component';
+import { CreatePlaylistPageComponent } from './AddMusic/create-playlist-page/create-playlist-page.component';
+import { HomeComponent } from './HomePage/home/home.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HttpInterceptorService } from './HttpInterceptorService';
+
 
 @NgModule({
   declarations: [
@@ -27,13 +32,15 @@ import { SidebarComponent } from './SideBar/sidebar/sidebar.component';
     MusicCardComponent,
     PopularArtistCardComponent,
     MusicbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    CreatePlaylistPageComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule
+    AppRoutingModule, FormsModule, HttpClientModule, ReactiveFormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent,SearchBarComponent]
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }],
+  bootstrap: [AppComponent, SearchBarComponent]
 })
 export class AppModule { }

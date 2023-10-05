@@ -10,10 +10,29 @@
   </div>
 </div>
 
-<!-- Display search results -->
-<div class="search-results">
-  <div *ngFor="let item of filteredItems" class="result-item">
-    <!-- Display item details here -->
-    <p>{{ item.song }} by {{ item.artist }}</p>
+<!-- Display search results for each property -->
+<div *ngFor="let key of getFilteredResultKeys()" class="property-results">
+  <h2>{{ key | titlecase }}</h2> <!-- Display the property name -->
+  <div *ngIf="filteredResults[key].length > 0" class="search-results">
+    <div *ngFor="let item of filteredResults[key]" class="result-item">
+      <div class="search-results">
+        <ng-container *ngFor="let music of musicData">
+          <div class="music-card">
+            <img [src]="music.imageUrl" alt="Album Art" />
+            <h2>{{ music.title }}</h2>
+            <p>{{ music.artist }}</p>
+            <button (click)="addToPlaylist(music)">Add to Playlist</button>
+          </div>
+        </ng-container>
+      </div>
+      
+    </div>
+  </div>
+  <div *ngIf="filteredResults[key].length === 0" class="no-results">
+    No results found for {{ key | titlecase }}.
   </div>
 </div>
+
+
+
+

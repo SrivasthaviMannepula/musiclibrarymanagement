@@ -12,12 +12,11 @@
     <div class="music-player">
         <div class="song-info">
             <div>
-                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                    alt="songPic" />
+                <img src={{playlistImage}} alt="songPic" />
             </div>
             <div>
-                <p>Overkill</p>
-                <p>Ankush</p>
+                <h3>{{ playlistName }}</h3>
+                <p>{{ playlistDescription }}</p>
             </div>
             <div class="heart">
                 <button (click)="handleButtonClick()"><i [ngStyle]="iconStyles" class="fas fa-heart"></i></button>

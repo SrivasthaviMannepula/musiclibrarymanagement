@@ -1,0 +1,41 @@
+.spotify-form {
+    background-color: #1e1e1e;
+    /* Spotify's background color */
+    color: #fff;
+    /* Text color */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.spotify-form label {
+    font-weight: bold;
+}
+
+.spotify-form input[type="text"],
+.spotify-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #333;
+    color: #fff;
+}
+
+.spotify-form button.spotify-button {
+    background-color: #1db954;
+    /* Spotify's green color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.spotify-button:hover {
+    background-color: #169344;
+    /* Darker green on hover */
+}
