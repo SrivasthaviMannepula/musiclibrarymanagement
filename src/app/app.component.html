@@ -1,24 +1,87 @@
-<!-- app.component.html -->
-
-<div class="app-container" style="display: flex; flex-direction: row;">
-
-    <app-sidebar></app-sidebar>
-    <app-musicbar></app-musicbar>
 
 
+<!DOCTYPE html>
 
-    <!-- Main Content Area -->
+<html lang="en">
 
-    <!-- <app-home></app-home> -->
+ 
 
+<head>
 
+    <meta charset="UTF-8">
 
-    <div style="flex-grow: 1; padding: 3px;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <router-outlet></router-outlet>
+    <title>Your App</title>
+
+</head>
+
+ 
+
+<body>
+
+    <div class="app-container">
+
+        <app-sidebar></app-sidebar>
+
+        <div class="main-content">
+
+            <div class="card-container">
+
+                <div style="display: flex; flex-direction: column;">
+
+                    <div>
+
+                        <h1>Popular Playlist</h1>
+
+                    </div>
+
+                    <div style="display: flex;">
+
+                        <app-music-card></app-music-card>
+
+                        <app-music-card></app-music-card>
+
+                        <app-music-card></app-music-card>
+
+                    </div>
+
+                </div>
+
+                <div style="display: flex; flex-direction: column;">
+
+                    <div>
+
+                        <h1>Popular Artist</h1>
+
+                    </div>
+
+                    <div style="display: flex;">
+
+                        <app-popular-artist-card></app-popular-artist-card>
+
+                        <app-popular-artist-card></app-popular-artist-card>
+
+                        <app-popular-artist-card></app-popular-artist-card>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <app-musicbar></app-musicbar>
 
     </div>
 
+</body>
 
+ 
 
-</div>
+</html>
+
+ 
+
+ 

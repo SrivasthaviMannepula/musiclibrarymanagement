@@ -1,7 +1,6 @@
+// search-bar.component.ts
 import { Component, OnInit } from '@angular/core';
-import { SongDetails } from 'src/app/songDetails';
-import { SearchService } from 'src/app/search.service';
-import { MusicbarComponent } from 'src/app/MusicPlayer/musicbar/musicbar.component'; // Update the path
+import { SearchService } from './search.service'; 
 
 @Component({
   selector: 'app-search-bar',
@@ -9,59 +8,88 @@ import { MusicbarComponent } from 'src/app/MusicPlayer/musicbar/musicbar.compone
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
-  searchTerm = '';
-  selectedFilter = 'song';
-  filteredResults: { [key: string]: SongDetails[] } = {}; // Use an object to store results by property
-  Object: any;
-  musicData: any[] = [
-    {
-      title: 'Song 1',
-      artist: 'Artist 1',
-      imageUrl: 'URL-to-image-1',
-    },
-    {
-      title: 'Song 2',
-      artist: 'Artist 2',
-      imageUrl: 'URL-to-image-2',
-    },
-  ];
+  searchTitle: string | undefined;
+  searchBy: string = 'Song'; // Default filter option
+  searchResults: any[] | undefined;
 
-  constructor(private searchService: SearchService) { }
+  constructor(private searchService: SearchService) {}
 
-  ngOnInit(): void {
-    this.searchService.getItems().subscribe(items => {
-      // Initialize the filteredResults object
-      this.filteredResults = {
-        song: items,
-        artist: items,
-        music_by: items,
-        album: items,
-        playlist: items
-      };
+  ngOnInit(): void {}
+
+  onSubmit(): void {
+    // Create a search DTO based on the selected options
+    const searchDTO = {
+      searchTitle: this.searchTitle,
+      searchBy: this.searchBy
+    };
+
+    // Call the search service with the search DTO
+    this.searchService.searchBy(searchDTO).subscribe((response) => {
+      this.searchResults = response;
     });
   }
-  addToPlaylist(song: SongDetails): void {
-    // Here, you can implement your logic to add the song to a playlist
-    console.log('Added to playlist:', song.song);
-  }
-  applyFilter(): void {
-    // Filter results for each property separately
-    for (const key in this.filteredResults) {
-      if (this.filteredResults.hasOwnProperty(key)) {
-        this.filteredResults[key] = this.searchService.filterItems(
-          this.searchTerm,
-          key
-        );
-      }
-    }
-  }
-
-  getFilteredResultKeys(): string[] {
-    return Object.keys(this.filteredResults);
-  }
-
-  selectFilter(filter: string): void {
-    this.selectedFilter = filter;
-    this.applyFilter();
-  }
 }
+
+
+
+// import { Component, OnInit } from '@angular/core';
+// import { SongDetails } from 'src/app/songDetails';
+// import { SearchService } from 'src/app/search.service';
+// import { MusicbarComponent } from 'src/app/MusicPlayer/musicbar/musicbar.component'; // Update the path
+// import { HttpClient } from '@angular/common/http';
+
+// @Component({
+//   selector: 'app-search-bar',
+//   templateUrl: './search-bar.component.html',
+//   styleUrls: ['./search-bar.component.css']
+// })
+// export class SearchBarComponent implements OnInit {
+//   searchTitle: string = '';
+//   searchResults: any[] = [];
+//   allSongs: any[] = [];
+//   isSearching: boolean = false; // Add this variable
+
+//   constructor(private http: HttpClient) {}
+
+//   ngOnInit() {
+//     // Fetch the list of all songs when the component is initialized
+//     this.http.get<any[]>('http://8080/api/search/all').subscribe(
+//       (response) => {
+//         this.allSongs = response;
+//       },
+//       (error) => {
+//         console.error('Error fetching all songs:', error);
+//       }
+//     );
+//   }
+
+//   search(criteria: string, endpoint: string) {
+//     this.isSearching = true; // Set isSearching to true when starting a search
+//     const searchDTO = { [criteria]: this.searchTitle };
+//     this.http.post<any[]>(endpoint, searchDTO).subscribe(
+//       (response) => {
+//         this.searchResults = response;
+//         this.isSearching = false; // Set isSearching back to false when search is complete
+//       },
+//       (error) => {
+//         console.error(`Error searching ${criteria}:`, error);
+//         this.isSearching = false; // Set isSearching to false on error too
+//       }
+//     );
+//   }
+
+//   searchBySong() {
+//     this.search('searchTitle', '/api/search/by');
+//   }
+
+//   searchByArtist() {
+//     this.search('searchArtist', '/api/search/by');
+//   }
+
+//   searchByAlbum() {
+//     this.search('searchAlbum', '/api/search/by');
+//   }
+//   searchByDirector() {
+//     this.search('searchAlbum', '/api/search/by');
+//   }
+// }

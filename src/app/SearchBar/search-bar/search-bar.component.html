@@ -1,18 +1,47 @@
-<!-- search-bar.component.html -->
+<!-- src/app/search-bar/search-bar.component.html -->
+<form (ngSubmit)="onSubmit()">
+  <input type="text" [(ngModel)]="searchTitle" name="searchTitle" placeholder="Search...">
+  <select [(ngModel)]="searchBy" name="searchBy">
+    <option value="Song">Song</option>
+    <option value="Artist">Artist</option>
+    <option value="Album">Album</option>
+    <option value="Director">Director</option>
+  </select>
+  <button type="submit">Search</button>
+</form>
+
+<!-- Display search results here -->
+<div *ngIf="searchResults">
+  <ul>
+    <li *ngFor="let result of searchResults">
+      {{ result }} <!-- Display result data as needed -->
+    </li>
+  </ul>
+</div>
+
+
+
+
+<!-- 
 <div class="search-bar">
   <input type="text" [(ngModel)]="searchTerm" placeholder="Search by song or artist">
   
-  <!-- Filter buttons -->
+
   <div class="filter-buttons">
     <button (click)="selectFilter('song')" [class.active]="selectedFilter === 'song'">Song</button>
     <button (click)="selectFilter('artist')" [class.active]="selectedFilter === 'artist'">Artist</button>
-    <!-- Add more filter buttons as needed -->
+
   </div>
 </div>
 
-<!-- Display search results for each property -->
+  <div class="search-results" *ngIf="isSearching">
+    <h3>Search Results:</h3>
+    <ul>
+      <li *ngFor="let result of searchResults">{{ result }}</li>
+    </ul>
+
 <div *ngFor="let key of getFilteredResultKeys()" class="property-results">
-  <h2>{{ key | titlecase }}</h2> <!-- Display the property name -->
+  <h2>{{ key | titlecase }}</h2> 
   <div *ngIf="filteredResults[key].length > 0" class="search-results">
     <div *ngFor="let item of filteredResults[key]" class="result-item">
       <div class="search-results">
@@ -35,4 +64,4 @@
 
 
 
-
+ -->
