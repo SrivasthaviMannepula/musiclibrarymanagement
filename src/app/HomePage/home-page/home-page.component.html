@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+ 
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your App</title>
+
+</head>
+
+ 
+
+<body>
+
+    <div class="app-container">
+
+        <app-sidebar></app-sidebar>
+        <!-- <app-search-bar></app-search-bar> -->
+        <div class="main-content">
+            <div class="card-container">
+
+                <div style="display: flex; flex-direction: column;">
+
+                    <div>
+
+                        <h1>Popular Playlist</h1>
+
+                    </div>
+
+                    <div style="display: flex;">
+
+                        <app-music-card></app-music-card>
+
+                        <app-music-card></app-music-card>
+
+                        <app-music-card></app-music-card>
+
+                    </div>
+
+                </div>
+
+                <div style="display: flex; flex-direction: column;">
+
+                    <div>
+
+                        <h1>Popular Artist</h1>
+
+                    </div>
+
+                    <div style="display: flex;">
+
+                        <app-popular-artist-card></app-popular-artist-card>
+
+                        <app-popular-artist-card></app-popular-artist-card>
+
+                        <app-popular-artist-card></app-popular-artist-card>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <app-musicbar></app-musicbar>
+
+    </div>
+
+</body>
+
+ 
+
+</html>
