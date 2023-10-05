@@ -1,0 +1,19 @@
+<!-- search-bar.component.html -->
+<div class="search-bar">
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search by song or artist">
+  
+  <!-- Filter buttons -->
+  <div class="filter-buttons">
+    <button (click)="selectFilter('song')" [class.active]="selectedFilter === 'song'">Song</button>
+    <button (click)="selectFilter('artist')" [class.active]="selectedFilter === 'artist'">Artist</button>
+    <!-- Add more filter buttons as needed -->
+  </div>
+</div>
+
+<!-- Display search results -->
+<div class="search-results">
+  <div *ngFor="let item of filteredItems" class="result-item">
+    <!-- Display item details here -->
+    <p>{{ item.song }} by {{ item.artist }}</p>
+  </div>
+</div>
