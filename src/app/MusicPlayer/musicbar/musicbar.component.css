@@ -1,0 +1,86 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.music-player {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+}
+
+.player-controls button {
+    background-color: #1DB954;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    display: flex;
+}
+
+.player-controls button:hover {
+    background-color: #177d3d;
+}
+
+.song-info p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+progress {
+    width: 30%;
+}
+
+.song-info img {
+    width: 70px;
+    height: auto;
+    border-radius: 10%;
+}
+
+.song-info {
+    display: flex;
+    gap: 10px;
+}
+
+.fa-heart {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.heart {
+    display: inline-block;
+}
+
+.heart button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.heart button i {
+    font-size: 18px;
+    color: #ccc;
+}
+
+.heart.active button i {
+    color: red;
+}
