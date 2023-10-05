@@ -11,9 +11,13 @@ export class MusicCardComponent {
   constructor(private musicplayerservice: MusicPlayerService) { }
 
   onClick() {
-    const playlistName = (document.querySelector('.playlist-details h2') || {}).textContent;
-    const playlistDescription = (document.querySelector('.playlist-details p') || {}).textContent;
-    const playlistImageSrc = document.querySelector('.playlist-image img')?.getAttribute('src') || '';
+    const playlistNameElement = document.querySelector('.playlist-details h2');
+    const playlistDescriptionElement = document.querySelector('.playlist-details p');
+    const playlistImageElement = document.querySelector('.playlist-image img');
+
+    const playlistName = playlistNameElement ? playlistNameElement.textContent : '';
+    const playlistDescription = playlistDescriptionElement ? playlistDescriptionElement.textContent : '';
+    const playlistImageSrc = playlistImageElement ? playlistImageElement.getAttribute('src') || '' : '';
 
 
     if (playlistName && playlistDescription && playlistImageSrc) {

@@ -18,6 +18,7 @@ import { CreatePlaylistPageComponent } from './AddMusic/create-playlist-page/cre
 import { HomeComponent } from './HomePage/home/home.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HttpInterceptorService } from './HttpInterceptorService';
+import { NavbarComponent } from './SearchBar/navbar/navbar.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { HttpInterceptorService } from './HttpInterceptorService';
     SidebarComponent,
     CreatePlaylistPageComponent,
     HomeComponent,
+    NavbarComponent,
 
   ],
   imports: [

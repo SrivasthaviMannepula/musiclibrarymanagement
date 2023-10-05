@@ -1,38 +1,64 @@
-<!-- search-bar.component.html -->
-<div class="search-bar">
-  <input type="text" [(ngModel)]="searchTerm" placeholder="Search by song or artist">
-  
-  <!-- Filter buttons -->
-  <div class="filter-buttons">
-    <button (click)="selectFilter('song')" [class.active]="selectedFilter === 'song'">Song</button>
-    <button (click)="selectFilter('artist')" [class.active]="selectedFilter === 'artist'">Artist</button>
-    <!-- Add more filter buttons as needed -->
-  </div>
-</div>
+<div class="mainbox">
 
-<!-- Display search results for each property -->
-<div *ngFor="let key of getFilteredResultKeys()" class="property-results">
-  <h2>{{ key | titlecase }}</h2> <!-- Display the property name -->
-  <div *ngIf="filteredResults[key].length > 0" class="search-results">
-    <div *ngFor="let item of filteredResults[key]" class="result-item">
-      <div class="search-results">
-        <ng-container *ngFor="let music of musicData">
-          <div class="music-card">
-            <img [src]="music.imageUrl" alt="Album Art" />
-            <h2>{{ music.title }}</h2>
-            <p>{{ music.artist }}</p>
-            <button (click)="addToPlaylist(music)">Add to Playlist</button>
-          </div>
-        </ng-container>
+  <div class="search-bar">
+
+
+    <input type="text" [(ngModel)]="searchTitle" name="searchTitle" placeholder="Search...">
+
+    <select [(ngModel)]="searchBy" name="searchBy">
+
+      <option value="Song">Song</option>
+
+      <option value="Artist">Artist</option>
+
+      <option value="Album">Album</option>
+
+      <option value="Director">Director</option>
+
+    </select>
+
+    <button type="submit" (click)="onSubmit()">Search</button>
+
+
+
+  </div>
+
+
+
+
+
+  <div *ngIf="searchResults && searchBy != 'Album' && searchResults.length > 0">
+
+    <h1>Search Results:</h1>
+
+    <app-music-card *ngFor="let searchRes of searchResults" [music]="searchRes"></app-music-card>
+
+  </div>
+
+
+
+  <div class="album-content" *ngIf="searchResults && searchBy == 'Album' && searchResults.length > 0">
+
+    <h1>Search Results:</h1>
+
+    <div *ngFor="let item of searchResults">
+
+      <div class="album">
+
+        <h2>Album Name: {{ item.albumName }}</h2>
+
+        <p>Album Length: {{ item.albumLength }} minutes</p>
+
+        <p>Number of Songs: {{ item.numOfSongs }}</p>
+
+        <p>Streams: {{ item.streams }}</p>
+
+        <p>Artist: {{ item.artistId.name }}</p>
+
+        <p>Created At: {{ item.createdAt | date:'medium' }}</p>
+
       </div>
-      
+
     </div>
   </div>
-  <div *ngIf="filteredResults[key].length === 0" class="no-results">
-    No results found for {{ key | titlecase }}.
-  </div>
 </div>
-
-
-
-

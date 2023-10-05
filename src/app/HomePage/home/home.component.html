@@ -12,7 +12,14 @@
                 <h1>Electronic Songs</h1>
             </div>
             <div style="display: flex;" class="music-card-container">
-                <app-music-card *ngFor="let musicItem of musicData" [music]="musicItem"></app-music-card>
+                <app-music-card *ngFor="let musicItem of musicDataEle" [music]="musicItem"></app-music-card>
+            </div>
+
+            <div>
+                <h1>Hip Hop Songs</h1>
+            </div>
+            <div style="display: flex;" class="music-card-container">
+                <app-music-card *ngFor="let musicItem of musicDataHip" [music]="musicItem"></app-music-card>
             </div>
 
         </div>
