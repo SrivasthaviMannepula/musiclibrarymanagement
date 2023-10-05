@@ -14,8 +14,16 @@
                 alt="playlistPic" />
         </div>
         <div class="playlist-details">
-            <h3>Overkill</h3>
-            <p>Fantastic</p>
+            <div style="display: flex; align-items: center; gap: 30px;">
+                <div>
+                    <h2>{{ music.songTitle }}</h2>
+                    <p>{{ music.albumId.artistId.name }}</p>
+                </div>
+                <div>
+                    <p>{{music.songDuration}} Minutes</p>
+                    <p>{{music.genreId.genreName}}</p>
+                </div>
+            </div>
             <div class="playlist-actions">
                 <button (click)="onClick()">Play</button>
                 <button>Add to Library</button>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MusicPlayerService } from 'src/app/music-player.service';
 
 @Component({
@@ -7,10 +7,11 @@ import { MusicPlayerService } from 'src/app/music-player.service';
   styleUrls: ['./music-card.component.css']
 })
 export class MusicCardComponent {
+  @Input() music: any;
   constructor(private musicplayerservice: MusicPlayerService) { }
 
   onClick() {
-    const playlistName = (document.querySelector('.playlist-details h3') || {}).textContent;
+    const playlistName = (document.querySelector('.playlist-details h2') || {}).textContent;
     const playlistDescription = (document.querySelector('.playlist-details p') || {}).textContent;
     const playlistImageSrc = document.querySelector('.playlist-image img')?.getAttribute('src') || '';
 

@@ -34,7 +34,8 @@ import { HttpInterceptorService } from './HttpInterceptorService';
     MusicbarComponent,
     SidebarComponent,
     CreatePlaylistPageComponent,
-    HomeComponent
+    HomeComponent,
+
   ],
   imports: [
     BrowserModule,

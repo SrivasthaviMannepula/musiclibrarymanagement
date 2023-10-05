@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  musicData: any[] = []; // Array to store music data from the API
 
+  constructor(private httpClient: HttpClient) { }
+
+  ngOnInit() {
+    // Make an HTTP GET request to the API
+    this.httpClient.get('http://localhost:8080/api/search/genre/1')
+      .subscribe((data: any) => {
+        // Assign the response data to the musicData array
+        this.musicData = data;
+      });
+  }
 }

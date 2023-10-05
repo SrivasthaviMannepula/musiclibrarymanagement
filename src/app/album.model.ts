@@ -4,6 +4,7 @@ export interface Song {
     songDuration: number;
     streams: number;
     genreId: number;
+    directorName: string;
 }
 
 export interface Album {

@@ -34,6 +34,18 @@
 
 }
 
+.music-card-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.app-music-card.hidden {
+    display: none;
+    /* Hide cards beyond the top 3 */
+}
+
 
 
 .card {

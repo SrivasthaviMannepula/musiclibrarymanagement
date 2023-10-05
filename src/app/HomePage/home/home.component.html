@@ -2,13 +2,19 @@
     <div class="card-container">
         <div style="display: flex; flex-direction: column;">
             <div>
-                <h1>Popular Playlist</h1>
+                <h1>POP Songs</h1>
             </div>
-            <div style="display: flex;">
-                <app-music-card></app-music-card>
-                <app-music-card></app-music-card>
-                <app-music-card></app-music-card>
+            <div style="display: flex;" class="music-card-container">
+                <app-music-card *ngFor="let musicItem of musicData" [music]="musicItem"></app-music-card>
             </div>
+
+            <div>
+                <h1>Electronic Songs</h1>
+            </div>
+            <div style="display: flex;" class="music-card-container">
+                <app-music-card *ngFor="let musicItem of musicData" [music]="musicItem"></app-music-card>
+            </div>
+
         </div>
         <div style="display: flex; flex-direction: column;">
             <div>
