@@ -10,7 +10,10 @@ import { PlaylistsComponent } from './Playlists/playlists/playlists.component';
 import { SearchBarComponent } from './SearchBar/search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-
+import { MusicCardComponent } from './HomePage/music-card/music-card.component';
+import { PopularArtistCardComponent } from './HomePage/popular-artist-card/popular-artist-card.component';
+import { MusicbarComponent } from './MusicPlayer/musicbar/musicbar.component';
+import { SidebarComponent } from './SideBar/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,11 @@ import { NgModule } from '@angular/core';
     AddMusicComponent,
     UserProfileComponent,
     PlaylistsComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    MusicCardComponent,
+    PopularArtistCardComponent,
+    MusicbarComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
