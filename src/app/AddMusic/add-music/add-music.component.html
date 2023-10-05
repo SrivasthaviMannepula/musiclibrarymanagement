@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Song</title>
+</head>
+
+<body>
+    <h2>Add Song</h2>
+
+    <form action = "#" method="post">
+
+        <label for="song_title">Song Title:</label>
+        <input type="text" id="song_title" name="song_title" required /><br>
+
+        <label for="song_duration">Duration (minutes):</label>
+        <input type="number" id="song_duration" name="song_duration" step="0.01" required /><br>
+
+        <label for="release_year">Release Year:</label>
+        <input type="number" id="release_year" name="release_year" min="1900" max="2099" required /><br>
+
+        <label>Genres:</label><br>
+        <input type="checkbox" id="genre_1" name="genres[]" value="1">
+        <label for="genre_1">Genre 1</label><br>
+        
+        <input type="checkbox" id="genre_2" name="genres[]" value="2">
+        <label for="genre_2">Genre 2</label><br>
+        
+        <!-- Add more genre checkboxes as needed -->
+
+        <label for="publisher_id">Publisher ID:</label>
+        <input type="number" id="publisher_id" name="publisher_id" required /><br>
+
+        <label for="album_id">Album ID:</label>
+        <input type="number" id="album_id" name="album_id" required /><br>
+
+        <input type="submit" value="Add Song" />
+    </form>
+</body>
+
+</html>
