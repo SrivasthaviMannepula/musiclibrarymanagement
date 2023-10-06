@@ -69,3 +69,35 @@ body {
     list-style-type: none;
     margin-top: 20px;
 }
+
+/* Style for the "List of Names" card */
+.name-card {
+    margin-top: 20px;
+    background-color: #222;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.name-card h3 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.name-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.name-card li {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #ccc;
+}
+
+/* Style for the links inside the "List of Names" card */
+.name-card a {
+    text-decoration: none;
+    color: #fff;
+}

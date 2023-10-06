@@ -13,12 +13,13 @@ import { NgModule } from '@angular/core';
 import { MusicCardComponent } from './HomePage/music-card/music-card.component';
 import { PopularArtistCardComponent } from './HomePage/popular-artist-card/popular-artist-card.component';
 import { MusicbarComponent } from './MusicPlayer/musicbar/musicbar.component';
-import { SidebarComponent } from './SideBar/sidebar/sidebar.component';
 import { CreatePlaylistPageComponent } from './AddMusic/create-playlist-page/create-playlist-page.component';
 import { HomeComponent } from './HomePage/home/home.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HttpInterceptorService } from './HttpInterceptorService';
 import { NavbarComponent } from './SearchBar/navbar/navbar.component';
+import { SidebarComponent } from './SideBar/sidebar/sidebar.component';
+
 
 
 @NgModule({
@@ -33,11 +34,10 @@ import { NavbarComponent } from './SearchBar/navbar/navbar.component';
     MusicCardComponent,
     PopularArtistCardComponent,
     MusicbarComponent,
-    SidebarComponent,
     CreatePlaylistPageComponent,
     HomeComponent,
     NavbarComponent,
-
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

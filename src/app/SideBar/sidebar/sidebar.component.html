@@ -10,8 +10,9 @@
 <body>
     <div class="sidebar">
         <div class="logo">
-            <img src="../../../assets/musicLogo.jpg" alt="Spotify Logo" routerLink="/">
+            <img src="../../../assets/music-logo.png" alt="Spotify Logo" routerLink="/">
         </div>
+
         <ul class="menu">
             <div class="house-icn">
                 <div>
@@ -41,11 +42,19 @@
                     <li><a href="#">Your Library</a></li>
                 </div>
                 <div>
-                    <i routerLink="/createplaylistpage" class="fa-solid fa-plus"></i>
+                    <i routerLink="/createplaylistpage" style="cursor: pointer;" class="fa-solid fa-plus"></i>
                 </div>
             </div>
         </div>
+        <div class="name-card">
+            <h3>Playlists</h3>
+            <ul>
+                <li *ngFor="let name of names" style="cursor: pointer;" (click)="onNameClick(name.playlistId)">{{
+                    name.playlistName }}</li>
+            </ul>
+        </div>
     </div>
+
     <script src="https://kit.fontawesome.com/5926dac9ae.js" crossorigin="anonymous"></script>
 </body>
 

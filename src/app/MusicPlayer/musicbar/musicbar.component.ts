@@ -25,7 +25,7 @@ export class MusicbarComponent implements OnInit {
       if (songName) { // Check if songName is not null or undefined
 
         // Make an API request to add the song to favorites with the song name
-        this.http.post(`/api/user-music/song/${songName}/favourite`, {}).subscribe(
+        this.http.post(`http://localhost:8080/api/user-music/song/${songName}/favourite`, {}).subscribe(
           (response) => {
             console.log('Song added to favorites');
             this.iconStyles = {
@@ -40,9 +40,7 @@ export class MusicbarComponent implements OnInit {
       } else {
         console.error('Song name is not available');
       }
-
     });
-
   }
 
   togglePlayPause(): void {
