@@ -1,0 +1,159 @@
+/* .playlist-container
+
+{
+
+    margin-left: 30%;
+
+} */
+
+/* Style the playlist container */
+
+.playlist-container {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 20px;
+
+    background-color: #f0f0f0;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    margin-left: 20%;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+/* Style the left and right sides */
+
+.left-side,
+
+.right-side {
+
+    flex: 1;
+
+    padding: 20px;
+
+}
+
+
+
+/* Style the heading for sections */
+
+h3 {
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+
+    color: #333;
+
+}
+
+
+
+/* Style the lists */
+
+ul {
+
+    list-style: none;
+
+    padding: 0;
+
+}
+
+
+
+/* Style list items */
+
+li {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+    background-color: #fff;
+
+    padding: 10px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 5px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+/* Style buttons */
+
+button {
+
+    background-color: #007bff;
+
+    color: #fff;
+
+    border: none;
+
+    padding: 5px 10px;
+
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+
+}
+
+
+
+button:hover {
+
+    background-color: #0056b3;
+
+}
+
+
+
+/* Style the container and adjust the margin */
+
+.container {
+
+    margin-left: 30%;
+
+}
+
+
+
+/* Style the sidebar if you have one */
+
+.sidebar {
+
+    width: 200px;
+
+    background-color: #333;
+
+    color: #fff;
+
+    padding: 20px;
+
+    border-radius: 5px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+/* Additional styles as needed for your specific design */

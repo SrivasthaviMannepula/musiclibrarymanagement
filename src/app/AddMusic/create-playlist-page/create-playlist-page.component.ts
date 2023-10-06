@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { PlaylistService } from 'src/app/services/PlaylistService.service';
 
 @Component({
   selector: 'app-create-playlist-page',
@@ -7,15 +8,37 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-playlist-page.component.css']
 })
 export class CreatePlaylistPageComponent {
+
   playlistName: string = '';
+
   description: string = '';
 
-  constructor(private router: Router) { }
+  playListId?: number;
+
+
+
+  constructor(private router: Router, private playlistService: PlaylistService) { }
+
+
 
   createPlaylist() {
-    // Perform playlist creation logic here
-    // You can access the playlistName and description values
-    // Navigate back to the previous page or perform other actions as needed
-    this.router.navigate(['/']); // Example: Navigate back to the home page
+
+
+
+    this.playlistService.createPlaylist(this.playlistName, this.playlistName).subscribe((response) => {
+
+      this.playListId = response;
+
+      console.log(this.playListId);
+
+      this.router.navigate(['/playlist', this.playListId]);
+
+    });
+
+
+
   }
+
+
+
 }

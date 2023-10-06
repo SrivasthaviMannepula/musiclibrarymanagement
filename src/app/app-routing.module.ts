@@ -5,6 +5,7 @@ import { HomeComponent } from './HomePage/home/home.component';
 import { SearchBarComponent } from './SearchBar/search-bar/search-bar.component';
 import { LoginComponent } from './LoginAndRegister/login/login.component';
 import { AddMusicComponent } from './AddMusic/add-music/add-music.component';
+import { PlaylistsComponent } from './Playlists/playlists/playlists.component';
 
 const routes: Routes = [
   { path: 'createplaylistpage', component: CreatePlaylistPageComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'search', component: SearchBarComponent },
   { path: 'login', component: LoginComponent },
   { path: 'addmusic', component: AddMusicComponent },
+  { path: 'playlist/:data', component: PlaylistsComponent }
 ];
 
 @NgModule({

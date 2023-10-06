@@ -29,4 +29,10 @@ export class LoginComponent {
       this.router.navigate(['/home']);
     });
   }
+
+  logout(): void {
+
+    this.authService.logout();
+
+  }
 }

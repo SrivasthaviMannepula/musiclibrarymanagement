@@ -1,1 +1,40 @@
-<p>playlists works!</p>
+<div class="playlist-container">
+
+    <div class="left-side">
+
+        <h2>PlayList :{{ playlistName }}</h2>
+
+        <p>Description: {{ description }}</p>
+
+
+
+        <h3>Songs in Playlist</h3>
+
+        <ul>
+
+            <li *ngFor="let song of playlistSongs">
+
+                {{ song.songTitle }} <button (click)="removeSong(song.songId)">Remove</button>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+
+
+    <div class="right-side">
+
+        <h3>Recommend Songs</h3>
+
+        <ul>
+
+            <li *ngFor="let song of recommendSongs">
+                {{ song.songTitle }} <button (click)="addSong(song.songId)">Add</button>
+            </li>
+        </ul>
+    </div>
+</div>

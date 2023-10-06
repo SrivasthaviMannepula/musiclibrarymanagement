@@ -9,6 +9,10 @@
     width: 300px;
 }
 
+.playlist-card:hover {
+    transform: scale(1.05);
+}
+
 .playlist-image {
     flex: 1;
     max-width: 300px;
