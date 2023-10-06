@@ -6,15 +6,15 @@ import { SearchBarComponent } from './SearchBar/search-bar/search-bar.component'
 import { LoginComponent } from './LoginAndRegister/login/login.component';
 import { AddMusicComponent } from './AddMusic/add-music/add-music.component';
 import { PlaylistsComponent } from './Playlists/playlists/playlists.component';
+import { RegisterComponent } from './LoginAndRegister/register/register.component';
 
 const routes: Routes = [
   { path: 'createplaylistpage', component: CreatePlaylistPageComponent },
   { path: 'home', component: HomeComponent },
   { path: 'search', component: SearchBarComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'addmusic', component: AddMusicComponent },
-  { path: 'playlist/:data', component: PlaylistsComponent }
-];
+  { path: 'addMusic', component: AddMusicComponent },
+  { path: 'playlist/:data', component: PlaylistsComponent },];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -19,7 +19,8 @@
                 <p>{{ playlistDescription }}</p>
             </div>
             <div class="heart">
-                <button (click)="handleButtonClick()"><i [ngStyle]="iconStyles" class="fas fa-heart"></i></button>
+                <button (click)="handleButtonClick()" [class.liked]="isLiked" class="like-button"><i
+                        class="fas fa-heart"></i></button>
             </div>
         </div>
         <progress value="30" max="100"></progress>

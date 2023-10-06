@@ -6,6 +6,7 @@
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 10%;
 }
 
 .spotify-form label {

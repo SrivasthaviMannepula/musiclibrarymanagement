@@ -8,18 +8,17 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./musicbar.component.css']
 })
 export class MusicbarComponent implements OnInit {
-  iconStyles: any = {}; // Object to hold icon styles
-  iconColor: string = 'black'; // Initial icon color
   isPlaying: boolean = false;
   playlistName: string = '';
   playlistDescription: string = '';
   playlistImage: string = '';
+  isLiked = false; // Initialize as not liked
 
   constructor(private musicplayerservice: MusicPlayerService, private http: HttpClient) { }
 
   // This function will be called when the button is clicked
   handleButtonClick(): void {
-    console.log("song name - " + this.musicplayerservice.playlistName$)
+    this.isLiked = !this.isLiked; // Toggle the like state
 
     this.musicplayerservice.playlistName$.subscribe((songName) => {
       if (songName) { // Check if songName is not null or undefined
@@ -28,9 +27,6 @@ export class MusicbarComponent implements OnInit {
         this.http.post(`http://localhost:8080/api/user-music/song/${songName}/favourite`, {}).subscribe(
           (response) => {
             console.log('Song added to favorites');
-            this.iconStyles = {
-              'color': 'red'
-            };
           },
           (error) => {
             console.error('Error adding song to favorites', error);
@@ -46,6 +42,7 @@ export class MusicbarComponent implements OnInit {
   togglePlayPause(): void {
     this.isPlaying = !this.isPlaying; // Toggle between play and pause
   }
+
 
   ngOnInit() {
     this.musicplayerservice.playlistName$.subscribe((name) => (this.playlistName = name));

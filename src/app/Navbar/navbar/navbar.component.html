@@ -1,0 +1,17 @@
+<div class="navbar">
+
+    <div class="navbar-buttons">
+
+        <button class="navbar-button" *ngIf="!isLoggedIn" (click)="login()">Login</button>
+
+        <button class="navbar-button" *ngIf="!isLoggedIn" (click)="register()">Register</button>
+
+        <button class="navbar-button" *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+
+        <button class="navbar-button" *ngIf="isLoggedIn" (click)="addMusic()">Add Music</button>
+
+
+
+    </div>
+
+</div>

@@ -1,11 +1,27 @@
-<div class="app-container" style="display: flex; flex-direction: row;">
+<div class="app-container" style="display: flex; flex-direction: row; position: relative;">
+
+
+
+    <!-- Navbar -->
+
+    <app-navbar style="position: absolute; top: 0; left: 0; right: 0; z-index: 1;"></app-navbar>
+
+
+
     <app-sidebar></app-sidebar>
+
     <app-musicbar></app-musicbar>
 
+
+
     <div style="flex-grow: 1; padding: 3px;">
+
+        <!-- Content -->
 
         <router-outlet></router-outlet>
 
     </div>
+
+
 
 </div>

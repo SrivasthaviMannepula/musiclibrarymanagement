@@ -21,13 +21,6 @@ export class HomeComponent {
 
 
   ngOnInit() {
-
-
-
-
-
-
-
     this.httpClient.get<ReceivedSong[]>('http://localhost:8080/api/search/genre/1')
 
       .subscribe((data: ReceivedSong[]) => {
@@ -35,7 +28,6 @@ export class HomeComponent {
         this.musicData = data;
 
         console.log("music data " + this.musicData)
-
       });
 
 
@@ -47,7 +39,6 @@ export class HomeComponent {
         this.musicDataEle = data;
 
         console.log("music data " + this.musicData)
-
       });
 
 
@@ -59,10 +50,6 @@ export class HomeComponent {
         this.musicDataHip = data;
 
         console.log("music data " + this.musicData)
-
       });
-
-
-
   }
 }
