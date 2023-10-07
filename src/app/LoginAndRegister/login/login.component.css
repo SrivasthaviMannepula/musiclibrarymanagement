@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-    background-color: #fddcf5;
+    background-color: #1DB954;
     color: #090709;
     border-radius: 8px;
     padding: 20px;
@@ -22,9 +22,12 @@ body {
 
 .container img {
     border-style: dotted;
-    border-radius: 50%; /* This rounds the image */
-    max-inline-size: 100%; /* Ensures the image fits within the container */
-    block-size: 100px; /* Maintains aspect ratio */
+    border-radius: 50%;
+    /* This rounds the image */
+    max-inline-size: 100%;
+    /* Ensures the image fits within the container */
+    block-size: 100px;
+    /* Maintains aspect ratio */
 }
 
 .container label {
@@ -39,6 +42,7 @@ body {
     margin-block-end: 10px;
     border: none;
     border-radius: 4px;
+    padding-right: 3px;
 }
 
 .container input[type="submit"] {

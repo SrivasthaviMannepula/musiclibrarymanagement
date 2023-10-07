@@ -6,7 +6,7 @@
             <input type="text" id="albumName" name="albumName" [(ngModel)]="album.albumName" required>
         </div>
         <div class="form-group">
-            <label for="albumLength">Album Length (seconds):</label>
+            <label for="albumLength">Album Length (Minutes.Seconds):</label>
             <input type="number" id="albumLength" name="albumLength" [(ngModel)]="album.albumLength" required>
         </div>
         <div class="form-group">
@@ -22,7 +22,7 @@
             <div class="song" *ngFor="let song of album.albumSongs; let i = index">
                 <label for="songTitle{{i}}">Song Title:</label>
                 <input type="text" id="songTitle{{i}}" name="songTitle" [(ngModel)]="song.songTitle" required>
-                <label for="songDuration{{i}}">Song Duration (seconds):</label>
+                <label for="songDuration{{i}}">Song Duration (Minutes.Seconds):</label>
                 <input type="number" id="songDuration{{i}}" name="songDuration" [(ngModel)]="song.songDuration"
                     required>
                 <label for="songStreams{{i}}">Streams:</label>
@@ -30,8 +30,15 @@
                 <label for="songGenre{{i}}">Genre ID:</label>
                 <input type="number" id="songGenre{{i}}" name="songGenre" [(ngModel)]="song.genreId" required>
             </div>
-            <button type="button" (click)="addSong()">Add Song</button>
+            <div style="display: flex; padding-bottom: 30px; gap: 10px;">
+                <div>
+                    <button type="button" (click)="addSong()">Add Song</button>
+                </div>
+                <div>
+                    <button type="submit">Create Album</button>
+
+                </div>
+            </div>
         </div>
-        <button type="submit">Create Album</button>
     </form>
 </div>
